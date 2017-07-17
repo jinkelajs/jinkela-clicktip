@@ -1,0 +1,22 @@
+<meta charset="utf-8" />
+<script src="/tester.js"></script>
+<script src="../node_modules/jinkela/umd.js"></script>
+<script src="../index.js"></script>
+<script>
+addEventListener('click', event => {
+  let ct = ClickTip.show(event, { text: 'hehe' });
+  Tester.assert(ct, 'must be a jinkela object');
+  Tester.assert(ct.element.parentNode === document.body, 'parent must be body');
+  Tester.assert(ct.element.offsetWidth > 0, 'must be visiable');
+  Tester.assert(ct.element.textContent === 'hehe', 'content must be hehe');
+  Tester.assert(ct.animation, 'animation must be an object');
+  ct.animation.addEventListener('finish', () => {
+    Tester.assert(ct.element.parentNode === null, 'parent must be null');
+    Tester.feedback(true);
+  });
+});
+
+addEventListener('load', () => {
+  document.body.dispatchEvent(new MouseEvent('click', { clientX: 100, clientY: 100, bubbles: true }));
+});
+</script>
