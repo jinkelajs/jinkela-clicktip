@@ -1,4 +1,4 @@
-class ClickTip extends Jinkela {
+class ClickTip extends Jinkela { // eslint-disable-line no-unused-vars
   static show(event, options = {}) {
     let { clientX, clientY } = event;
     return new this(options, { clientX, clientY }).to(document.body);
