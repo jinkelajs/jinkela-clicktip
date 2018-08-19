@@ -14,7 +14,7 @@ npm install jinkela-clicktip
 * `options` **Object**:
   * `text` **String** The text of tip.
 
-## Demo [Live](https://jinkelajs.github.io/jinkela-clicktip/example.html)
+## Demo [Live](https://jinkelajs.github.io/jinkela-clicktip/example/)
 
 ```html
 <meta charset="utf-8" />
